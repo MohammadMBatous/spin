@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>قرعة - معهد الفتح الخيري</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+        <main>
+            <div class="title">
+                <p>أسماء المشاركين بالقرعة</p>
+            </div>
+            <div class="group" id="group">
+
+            </div>
+            <button id="start" class="start transform">
+                بدأ القرعة
+            </button>
+
+            <aside id="modal" class="ds-none">
+                <!-- here content modal  -->
+                <p id="name-winner" class="paragraph">
+
+                </p>
+                <button id="retry-btn" class="ds-none" >إعادة المحاولة
+                    <img src="images/replay.png" width="25" alt="replay">
+                </button>
+
+            </aside>
+            <div class="paernt-check-box">
+                <input type="checkbox" name="checkbox" id="stopescape">
+            </div>
+            <div id="confetti-container"></div>
+
+        </main>
+        <script src="app.js"></script>
+    </body>
+</html>

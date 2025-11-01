@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap');
+
+:root {
+    --color-blue: #00CCFF;
+    --color-thincks: #075993;
+    --color-red: #FF3B3F;
+    --color-yellow: #FFD447;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Almarai", sans-serif;
+}
+
+main {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(62deg, var(--color-blue) ,var(--color-thincks), var(--color-blue));
+    animation: gradient 15s ease infinite;
+    background-size: 400% 400%;
+    padding: 10px;
+    position: relative;
+}
+
+main .title {
+    padding: 10px 20px;
+    font-size: 1.6rem;
+    color: var(--color-thincks);
+    font-weight: 800;
+    background-color: white;
+     border-radius: 10px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+}
+
+main .group {
+  width: 100%;
+  height: 550px;
+  overflow-y: auto;
+  margin-top: 10px;
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 10px; 
+  padding: 10px;
+  scrollbar-width: thin;
+}
+main .group .card { 
+    display: flex;
+    align-items: center;
+    
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px 20px;
+    font-size: 1.6rem;
+    color: var(--color-thincks);
+    font-weight: 700;
+    background-color: white;
+    text-align: center;
+    border-radius: 10px;
+    font-weight: extra-bold;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+main .card div {
+    align-self: flex-start;
+}
+main .card img {    
+    width: 30px;
+}
+
+/* button start */
+
+.transform {
+      top: 90%;   
+     left: 20;
+     right:20; 
+}
+.move {
+    position: fixed;
+      top: 90%;   
+    left: 20;
+    right: 20;
+    margin-bottom: 0px;
+}
+.start {
+    position: absolute;
+    margin: 10px 0;
+    padding: 10px 20px;
+    width: 200px;
+    cursor: pointer;
+    font-size: 1.6rem   ;
+    font-family: "Almarai", sans-serif;
+    outline: none;
+    border-radius: 10px;
+    border: none;
+    color: var(--color-thincks) ;
+    background: linear-gradient(90deg,var(--color-yellow));
+    font-weight: 700;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; 
+    animation: pluse 2s infinite linear    ;
+}
+
+
+/* modal */
+aside {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center ;
+    align-items: center;
+}
+aside .paragraph{
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    font-size: 2rem;
+    color: var(--color-thincks);
+    font-weight: 700;
+    height: fit-content;
+}
+
+
+
+#retry-btn {
+background-color: var(--color-blue);
+color: white;
+border: none;   
+outline: none;
+    font-family: "Almarai", sans-serif;
+    padding: 10px 20px;
+    margin-top: 5px;
+    cursor: pointer;    
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px   ;
+    
+}
+#retry-btn:hover {
+    background-color: var(--color-yellow);
+    transform: scale(1.1);
+}
+
+.paernt-check-box {
+    position: absolute  ;
+    left: 20px;
+    top: 20px;
+}
+
+/* confetti */
+
+
+
+#confetti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* لتجنب التأثير على الزر أو العناصر */
+    overflow: hidden;
+    z-index: 9999;
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    opacity: 0.8;
+    border-radius: 50%; /* يمكنك تجربة مربعات أو دوائر */
+    animation: fall 3s linear forwards;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+
+
+
+
+
+
+
+
+
+/* public */
+.ds-none {
+    display: none !important;
+}
+
+
+
+
+
+
+
+/* animation */
+
+
+@-webkit-keyframes gradient {
+    0% {
+        background-position: 0 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes pluse {
+    0% {
+       left: 51%;
+    }
+
+    50% {
+       left: 49%;
+    }
+
+    100% {
+        left: 50%;  
+  }
+}
